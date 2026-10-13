@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turkey-postal-codes"
+dynamic = ["version"]
+description = "Fast and offline Turkey postal codes (posta kodu) lookup library with clean JSON datasets."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Uğur ALTINSOY" }]
+keywords = ["turkey", "turkiye", "postal-codes", "zipcode", "posta-kodu", "il", "ilce"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Natural Language :: Turkish",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/uguraltinsoy/turkey-postal-codes"
+Issues = "https://github.com/uguraltinsoy/turkey-postal-codes/issues"
+
+[tool.setuptools]
+packages = ["turkey_postal_codes"]
+
+[tool.setuptools.dynamic]
+version = { attr = "turkey_postal_codes.__version__" }
+
+[tool.setuptools.package-data]
+turkey_postal_codes = ["data/*.json"]
